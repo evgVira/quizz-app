@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: quizz-app
+  datasource:
+    url: {SPRING_DATASOURCE_URL}
+    username: {SPRING_DATASOURCE_USERNAME}
+    password: {SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+server:
+  port: 8081
+
+jwt:
+  secret: $2a$12$MHg7da/JZTB5sTsaGKUiS.KpkkXcRuoy/dzaVQZEL.pXL8/5NWE9m
+  lifeTime: 60m
